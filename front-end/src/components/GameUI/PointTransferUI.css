@@ -1,0 +1,81 @@
+@keyframes verticalScrolling {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.bg-yellow-400 {
+  position: relative;
+  width: 100%;
+  height: 6rem;
+  overflow-x: auto;
+  border-radius: 0.5rem;
+}
+
+.scrolling-content {
+  display: flex;
+  flex-direction: column;
+  animation: verticalScrolling 24s linear infinite;
+}
+
+.scrolling-content.paused {
+  animation-play-state: paused;
+}
+
+.news-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 6rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.news-item .flex {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0 1rem;
+}
+
+/* Initially hide scrollbar */
+.scrolling-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* Show scrollbar when scrolling stops */
+.scrolling-content.show-scrollbar::-webkit-scrollbar {
+  display: block;
+  width: 10px;
+}
+
+.scrolling-content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+.scrolling-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Set a high value */
+}
+
+.bg-gray-500 {
+  background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent background */
+}
+
+.bg-opacity-75 {
+  z-index: 1001; /* Slightly higher than the background overlay */
+}
